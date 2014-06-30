@@ -34,6 +34,7 @@ class WechatmsgWidget extends Action {
                         'FLIGHT_TIME' => 'execClick_FLIGHT_TIME',//班机时刻表
                         'FLIGHT_TIME_NOW' => 'execClick_FLIGHT_TIME_NOW',//班机实际到离
                         'MY_EVAAIR' => 'execClick_MY_EVAAIR',//我的长荣航班
+                        'EVAAIR_DONOT_KNOW' => 'execClick_EVAAIR_DONOT_KNOW',//你所不知的长荣
                     ),
                 ),
                 'LOCATION' => array(
@@ -171,6 +172,34 @@ class WechatmsgWidget extends Action {
                 'description' => '',
                 'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxI8Sutcz2UyCkuqlkHlba66Q9h1DAz8OjZMsqV9nWmRc0licaUBw0ufTw/0',
                 'url' => 'http://m.evaair.com/A10/FlightNotificationInfo.aspx?Lang=zh-cn',
+            ),
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+
+    //你所不知的长荣
+    public function execClick_EVAAIR_DONOT_KNOW($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '你所不知的长荣',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIC5uHWJH9s6ApnNdgzlYj5Xcw6oJicJjs8K0G1xuchIibHDqmvkeFxkZA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285181&idx=1&sn=99ab1fa6da1a9ba6ab82ef47f13d3a98#rd',
+            ),
+            array(
+                'title' => '长荣航空曾经搭载过的国宝级动物明星，你造都有谁吗？',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxI7QhiaNeB3Zs4GHYoHK9iclTegiagl0tuoJhiab6G3uHl9dWqffREpDqXEw/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285181&idx=2&sn=13781b649bc9c7a31eae5b9c6ef242dc#rd',
+            ),
+            array(
+                'title' => '做有台湾特色的飞机！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIdvVIyEH07bI4iaPJO6Vlue8cdnicz1XPAq89jvAnCH4xmxrPpclakVTA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285181&idx=3&sn=dc23c3265aa624df46edde95868458ac#rd',
             ),
         );
 
