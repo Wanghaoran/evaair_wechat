@@ -81,7 +81,6 @@ class WechatmsgWidget extends Action {
     public function execText($postObj){
         $fromUsername = $postObj -> FromUserName;
         $toUsername = $postObj -> ToUserName;
-
         $content = '长荣航空官方微信建设中...';
         $this -> responseText($toUsername, $fromUsername, $content);
     }
