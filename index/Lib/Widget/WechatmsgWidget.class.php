@@ -31,6 +31,7 @@ class WechatmsgWidget extends Action {
                 'CLICK' => array(
                     'ACTION_NAME' => 'execClick',
                     'EventKey' => array(
+                        'FLIGHT_TIME' => 'execClick_FLIGHT_TIME'//班机时刻表
 //                        'RESERVATION_HOTEL' => 'execClick_RESERVATION_HOTEL',
 //                        'MY_ORDER' => 'execClick_MY_ORDER',
 //                        'NEARBY_HOTEL' => 'execClick_NEARBY_HOTEL',
@@ -106,12 +107,29 @@ class WechatmsgWidget extends Action {
         if(!$action_name){
             $fromUsername = $postObj -> FromUserName;
             $toUsername = $postObj -> ToUserName;
-            $content = '凯悦集团官方微信建设中...';
+            $content = '长荣航空官方微信建设中...';
             $this -> responseText($toUsername, $fromUsername, $content);
             exit;
         }else{
             $this -> $action_name($postObj);
         }
+    }
+
+    //班机时刻表
+    public function execClick_FLIGHT_TIME($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '班机时刻表',
+                'description' => '您可以通过班机表定时刻表功能，查询由长荣(BR)以及立荣(B7)所飞航的国际航班。',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIMZVYVSXAqFVlibD4FFLAbLRKCYRH43em7ehwKfJNHSKDuSkicfh8CNQQ/0',
+                'url' => 'http://m.evaair.com/A2/TimetableSearch.aspx?Lang=zh-cn',
+            ),
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+
     }
 
     /*
