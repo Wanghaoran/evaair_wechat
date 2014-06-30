@@ -38,6 +38,8 @@ class WechatmsgWidget extends Action {
                         'EVAAIR_TAIWAN' => 'execClick_EVAAIR_TAIWAN',//搭长荣 游台湾
                         'EVAAIR_AIR' => 'execClick_EVAAIR_AIR',//长荣超萌彩绘机
                         'SALE_ACTIVITY' => 'execClick_SALE_ACTIVITY',//优惠活动
+                        'EVAAIR_TRAVEL' => 'execClick_EVAAIR_TRAVEL',//无限万里游
+                        'CONTACE_ME' => 'execClick_CONTACE_ME',//与我联系
                     ),
                 ),
                 'LOCATION' => array(
@@ -301,6 +303,48 @@ class WechatmsgWidget extends Action {
         );
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+
+
+    //无限万里游
+    public function execClick_EVAAIR_TRAVEL($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '关于无限万哩游',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww1UzKerHB6C8hN0drDRUicoK3wTIlozarPbJQRqt2WibmO5LJ34Xo3EicjjJ2iaEuvzvJaLickiamKTtGNg/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285349&idx=1&sn=6b6eaa68346b7e0e4b852a61b66c91f9#rd',
+            ),
+            array(
+                'title' => '【我的会员卡】查询哩程数据等功能，随时掌握累计情况',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww1UzKerHB6C8hN0drDRUicoK8jFCxPLhM2entX8WtXR85tNBXRBpxumDCBKoIiclxqKaUFSEtLjYx3A/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285349&idx=2&sn=85665d8b72d68d79186f3c58bed175f3#rd',
+            ),
+
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+
+    //与我联系
+    public function execClick_CONTACE_ME($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '与我联系',
+                'description' => '如有订位、票务、网站、报到、行李与机场服务等相关问题， 欢迎与我们联系。',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIvOny0Zsib48U7MjVHRF9PeIHQEhmEOZE4DCp220suzHXAsibU8fGibiazA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285408&idx=1&sn=98755d08a4e961ef5ddddfb3b2314b80#rd',
+            ),
+
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
     }
 
 
