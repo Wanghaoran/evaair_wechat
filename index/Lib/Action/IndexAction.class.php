@@ -31,6 +31,8 @@ class IndexAction extends Action {
 
         $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
+        file_put_contents('./1.txt', $postObj);
+
         $fromUserName = $postObj -> FromUserName;
         $toUserName = $postObj -> ToUserName;
         $content = '长荣航空官方微信建设中...';
