@@ -18,14 +18,33 @@ class IndexAction extends Action {
     */
 
     public function index(){
+
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-        echo 1;
+        /*
         if(!empty($postStr)){
             R('Wechatmsg/checkMsg', array($postStr), 'Widget');
         }else{
             echo '';
             exit;
         }
+        */
+
+        $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+
+        $fromUserName = $postObj -> FromUserName;
+        $toUserName = $postObj -> ToUserName;
+        $content = '长荣航空官方微信建设中...';
+        $textTpl = "<xml>
+                    <ToUserName><![CDATA[%s]]></ToUserName>
+                    <FromUserName><![CDATA[%s]]></FromUserName>
+                    <CreateTime>%s</CreateTime>
+                    <MsgType><![CDATA[%s]]></MsgType>
+                    <Content><![CDATA[%s]]></Content>
+                    <FuncFlag>0</FuncFlag>
+                    </xml>";
+        $resultStr = sprintf($textTpl, $fromUserName, $toUserName, time(), 'text', $content);
+        echo $resultStr;
+        exit;
     }
 
 }
