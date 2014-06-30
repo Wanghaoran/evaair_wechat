@@ -36,7 +36,7 @@ class IndexAction extends Action {
         $toUserName = $postObj -> ToUserName;
         $content = '长荣航空官方微信建设中...';
 
-        file_put_contents('1.txt', $content);
+        file_put_contents('1.txt', '1231222');
 
         $textTpl = "<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
