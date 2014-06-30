@@ -20,7 +20,6 @@ class IndexAction extends Action {
     public function index(){
 
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-        $postStr = $_GET["HTTP_RAW_POST_DATA"];
         /*
         if(!empty($postStr)){
             R('Wechatmsg/checkMsg', array($postStr), 'Widget');
@@ -32,7 +31,7 @@ class IndexAction extends Action {
 
         $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
-        dump(file_put_contents('1.txt', $postStr));
+        file_put_contents('1.txt', $postStr);
 
         $fromUserName = $postObj -> FromUserName;
         $toUserName = $postObj -> ToUserName;
