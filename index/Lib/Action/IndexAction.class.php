@@ -1,6 +1,7 @@
 <?php
 class IndexAction extends Action {
 
+    /*
     public function _before_index(){
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
@@ -14,6 +15,7 @@ class IndexAction extends Action {
             return false;
         }
     }
+    */
 
     public function index(){
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
