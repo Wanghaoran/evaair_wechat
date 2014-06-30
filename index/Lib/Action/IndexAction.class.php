@@ -20,6 +20,7 @@ class IndexAction extends Action {
     public function index(){
 
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+        $postStr = $_GET["HTTP_RAW_POST_DATA"];
         /*
         if(!empty($postStr)){
             R('Wechatmsg/checkMsg', array($postStr), 'Widget');
