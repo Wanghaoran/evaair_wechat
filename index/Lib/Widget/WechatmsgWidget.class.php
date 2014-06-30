@@ -321,7 +321,7 @@ class WechatmsgWidget extends Action {
                 'title' => '【我的会员卡】查询哩程数据等功能，随时掌握累计情况',
                 'description' => '',
                 'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww1UzKerHB6C8hN0drDRUicoK8jFCxPLhM2entX8WtXR85tNBXRBpxumDCBKoIiclxqKaUFSEtLjYx3A/0',
-                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285349&idx=2&sn=85665d8b72d68d79186f3c58bed175f3#rd',
+                'url' => 'http://m.evaair.com/A6/EvergreenClub.aspx?Lang=zh-cn',
             ),
 
         );
@@ -345,7 +345,7 @@ class WechatmsgWidget extends Action {
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
     }
-    
+
 
 
 
