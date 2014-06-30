@@ -31,19 +31,8 @@ class WechatmsgWidget extends Action {
                 'CLICK' => array(
                     'ACTION_NAME' => 'execClick',
                     'EventKey' => array(
-                        'FLIGHT_TIME' => 'execClick_FLIGHT_TIME'//班机时刻表
-//                        'RESERVATION_HOTEL' => 'execClick_RESERVATION_HOTEL',
-//                        'MY_ORDER' => 'execClick_MY_ORDER',
-//                        'NEARBY_HOTEL' => 'execClick_NEARBY_HOTEL',
-//                        'COMMON_QUESTION' => 'execClick_COMMON_QUESTION',
-//                        'RESERVATION_ONLINE' => 'execClick_RESERVATION_ONLINE',
-//                        'JOIN_MEMBER' => 'execClick_JOIN_MEMBER',
-//                        'MEMBER_EQUITY' => 'execClick_MEMBER_EQUITY',
-//                        'MEMBER_SALE' => 'execClick_MEMBER_SALE',
-//                        'MEMBER_SCORE' => 'execClick_MEMBER_SCORE',
-//                        'MEMBER_ONLINE' => 'execClick_MEMBER_ONLINE',
-//                        'ABOUT_HYATT' => 'execClick_ABOUT_HYATT',//关于凯悦
-//                        'NEW_SALE' => 'execClick_NEW_SALE',//最新优惠
+                        'FLIGHT_TIME' => 'execClick_FLIGHT_TIME',//班机时刻表
+                        'FLIGHT_TIME_NOW' => 'execClick_FLIGHT_TIME_NOW',//班机实际到离
                     ),
                 ),
                 'LOCATION' => array(
@@ -129,7 +118,22 @@ class WechatmsgWidget extends Action {
         );
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
 
+    //班机实际到离
+    public function execClick_FLIGHT_TIME_NOW($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '班机实际到离',
+                'description' => '今天要搭机吗？还是您要到机场接机呢？ 您可以透过班机实际到离服务，查询长荣(BR)与立荣航空(B7)最新的班机动态。',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIUIbHXdfy9uWKyibVoxhg3yaoWqe4Bw76ib4XUZpo930e0bxkbG9ibQLFQ/0',
+                'url' => 'http://m.evaair.com/A3/FlightstatusSearch.aspx?Lang=zh-cn',
+            ),
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
     }
 
     /*
