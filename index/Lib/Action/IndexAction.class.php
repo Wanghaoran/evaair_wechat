@@ -19,19 +19,49 @@ class IndexAction extends Action {
 
     public function index(){
 
-        $content = '长荣航空官方微信建设中...';
+        $echoStr = $_GET["echostr"];
 
-        file_put_contents('1.txt', time());
-
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-        /*
-        if(!empty($postStr)){
-            R('Wechatmsg/checkMsg', array($postStr), 'Widget');
-        }else{
-            echo '';
+        //valid signature , option
+        if($this->checkSignature()){
+            echo $echoStr;
             exit;
         }
-        */
+    }
+
+        private function checkSignature()
+        {
+            $signature = $_GET["signature"];
+            $timestamp = $_GET["timestamp"];
+            $nonce = $_GET["nonce"];
+
+            $token = C('WECHAT_TOKEN');
+            $tmpArr = array($token, $timestamp, $nonce);
+            sort($tmpArr, SORT_STRING);
+            $tmpStr = implode( $tmpArr );
+            $tmpStr = sha1( $tmpStr );
+
+            if( $tmpStr == $signature ){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+
+        /*
+                $content = '长荣航空官方微信建设中...';
+
+                file_put_contents('1.txt', time());
+
+                $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+
+                if(!empty($postStr)){
+                    R('Wechatmsg/checkMsg', array($postStr), 'Widget');
+                }else{
+                    echo '';
+                    exit;
+                }
+
 
         $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
@@ -51,6 +81,7 @@ class IndexAction extends Action {
         $resultStr = sprintf($textTpl, $fromUserName, $toUserName, time(), 'text', $content);
         echo $resultStr;
         exit;
-    }
+        */
+
 
 }
