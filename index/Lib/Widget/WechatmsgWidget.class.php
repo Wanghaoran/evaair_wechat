@@ -36,6 +36,7 @@ class WechatmsgWidget extends Action {
                         'MY_EVAAIR' => 'execClick_MY_EVAAIR',//我的长荣航班
                         'EVAAIR_DONOT_KNOW' => 'execClick_EVAAIR_DONOT_KNOW',//你所不知的长荣
                         'EVAAIR_TAIWAN' => 'execClick_EVAAIR_TAIWAN',//搭长荣 游台湾
+                        'EVAAIR_AIR' => 'execClick_EVAAIR_AIR',//长荣超萌彩绘机
                     ),
                 ),
                 'LOCATION' => array(
@@ -240,6 +241,30 @@ class WechatmsgWidget extends Action {
         );
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+
+    //长荣超萌彩绘机
+    public function execClick_EVAAIR_AIR($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '搭乘 Hello Kitty Jet 开始幸福的旅程',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIiayOfe5GnKKicIlmXgscNtkHeV2wP1r88nUg2Dra1eGM9payj1ic1hUcw/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285035&idx=1&sn=241f0d5470c3dc662e4da2964e0e3457#rd',
+            ),
+            array(
+                'title' => '520，带她搭乘Hello Kitty彩绘机！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIicmrKayMH7MwiaZOibavaHGibxZNAzTfujYMxvwM5vHz0ZUPSGyotZv47g/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285035&idx=2&sn=f0e1d81f88f32683988b8be681313708#rd',
+            ),
+
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+
     }
 
 
