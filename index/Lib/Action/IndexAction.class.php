@@ -19,6 +19,10 @@ class IndexAction extends Action {
 
     public function index(){
 
+        $content = '长荣航空官方微信建设中...';
+
+        file_put_contents('1.txt', time());
+
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         /*
         if(!empty($postStr)){
@@ -34,9 +38,7 @@ class IndexAction extends Action {
 
         $fromUserName = $postObj -> FromUserName;
         $toUserName = $postObj -> ToUserName;
-        $content = '长荣航空官方微信建设中...';
 
-        file_put_contents('1.txt', '1231222');
 
         $textTpl = "<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
