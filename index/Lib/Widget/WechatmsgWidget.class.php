@@ -35,6 +35,7 @@ class WechatmsgWidget extends Action {
                         'FLIGHT_TIME_NOW' => 'execClick_FLIGHT_TIME_NOW',//班机实际到离
                         'MY_EVAAIR' => 'execClick_MY_EVAAIR',//我的长荣航班
                         'EVAAIR_DONOT_KNOW' => 'execClick_EVAAIR_DONOT_KNOW',//你所不知的长荣
+                        'EVAAIR_TAIWAN' => 'execClick_EVAAIR_TAIWAN',//搭长荣 游台湾
                     ),
                 ),
                 'LOCATION' => array(
@@ -205,6 +206,67 @@ class WechatmsgWidget extends Action {
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
     }
+
+    //搭长荣 游台湾
+    public function execClick_EVAAIR_TAIWAN($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '长荣/立荣两岸三地航班 飞行任遨游',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIev9SZT46RJlHKn9DmLM4cPwd0J192Z7Vcq2NCCAcGLJldrH9GjiboNA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200244422&idx=1&sn=2701640b306fb714d54146c8ba0aca4a#rd',
+            ),
+            array(
+                'title' => '2014台湾最想去的赏萤景点',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIlje0mEIHQ8Dica0CfmFK9SyLLbFYdnU8z2dStjaYaM82Am8A5NvoSBQ/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200244422&idx=2&sn=2a955aa4191b0651f8a7807fbd886eba#rd',
+            ),
+            array(
+                'title' => '走，看海去',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxI1MV3MEianxMaynZejxQew5GCHyJs8Xd9k3vOUJvib8MIdmH2l8wxVNgA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200244422&idx=3&sn=0204a675aeea35ada32c678a27442645#rd',
+            ),
+            array(
+                'title' => '松山-浦东航线开航 每周飞航3班',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIoQoFEcAbqicWfd2PPOK7cgWV85GrnSyA76ic6DmHFVuIwsgd6dZdiaVdA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200244422&idx=4&sn=c676a75eefe6bd6c47257dd0b7879a95#rd',
+            ),
+
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+
+
+
+
+
+
+    /*
+
+
+    //搭长荣 游台湾
+    public function execClick_EVAAIR_TAIWAN($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '',
+                'description' => '',
+                'picurl' => '',
+                'url' => '',
+            ),
+
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+    */
 
     /*
     //微信提交用户位置
