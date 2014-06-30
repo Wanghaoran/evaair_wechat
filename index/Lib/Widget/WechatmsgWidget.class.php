@@ -345,7 +345,7 @@ class WechatmsgWidget extends Action {
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
     }
-    }
+    
 
 
 
