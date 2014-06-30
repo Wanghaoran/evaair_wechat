@@ -90,7 +90,7 @@ class WechatmsgWidget extends Action {
     public function execSubscribe($postObj){
         $fromUsername = $postObj -> FromUserName;
         $toUsername = $postObj -> ToUserName;
-        $content = "感谢您关注长荣航空！\r\n您的旅程是长荣航空最重要的事！\r\n点击屏幕下方三个选单，我们将提供您更多服务内容！\r\n✈航班服务✈ 给你第一手的航班资讯\r\n✈知晓长荣✈ 你还不认识长荣吗？点击了解更多！\r\n✈会员服务✈ 长荣航空是星空联盟成员之一，在这给你最新会员好康\r\n欢迎您也关注我们的新浪微博http://weibo.com/3483881701";
+        $content = "感谢您关注长荣航空！\r\n您的旅程是长荣航空最重要的事！\r\n点击屏幕下方三个选单，我们将提供您更多服务内容！\r\n✈航班服务✈ 给你第一手的航班资讯\r\n✈知晓长荣✈ 你还不认识长荣吗？点击了解更多！\r\n✈会员服务✈ 长荣航空是星空联盟成员之一，在这给你最新的会员优惠信息\r\n欢迎您也关注我们的新浪微博<a href='http://weibo.com/3483881701'>http://weibo.com/3483881701</a>";
         $this -> responseText($toUsername, $fromUsername, $content);
     }
 
