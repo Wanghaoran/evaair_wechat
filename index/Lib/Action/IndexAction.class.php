@@ -31,7 +31,7 @@ class IndexAction extends Action {
 
         $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
-        file_put_contents('1.txt', $postStr);
+        dump(file_put_contents('1.txt', $postStr));
 
         $fromUserName = $postObj -> FromUserName;
         $toUserName = $postObj -> ToUserName;
