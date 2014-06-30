@@ -21,7 +21,7 @@ class IndexAction extends Action {
 
 
         //get post data, May be due to the different environments
-        $postStr = $GLOBALS['_REQUEST']["HTTP_RAW_POST_DATA"];
+        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
 
         //extract post data
         if (!empty($postStr)){
