@@ -37,6 +37,7 @@ class WechatmsgWidget extends Action {
                         'EVAAIR_DONOT_KNOW' => 'execClick_EVAAIR_DONOT_KNOW',//你所不知的长荣
                         'EVAAIR_TAIWAN' => 'execClick_EVAAIR_TAIWAN',//搭长荣 游台湾
                         'EVAAIR_AIR' => 'execClick_EVAAIR_AIR',//长荣超萌彩绘机
+                        'SALE_ACTIVITY' => 'execClick_SALE_ACTIVITY',//优惠活动
                     ),
                 ),
                 'LOCATION' => array(
@@ -265,6 +266,41 @@ class WechatmsgWidget extends Action {
 
         $this -> responseNews($toUsername, $fromUsername, $Articles);
 
+    }
+
+    //优惠活动
+    public function execClick_SALE_ACTIVITY($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '长荣/立荣航空，大咖“飞”你莫属！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIznsA7rnPD2PjaGXfNQXPbPvwLp4eMjf1ONoHswINcickO1fTIUEJLaw/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285230&idx=1&sn=5dba2d91d9556755762e855303b07d27#rd',
+            ),
+            array(
+                'title' => 'MILES & CASH 哩程抵票款功能更好用咯！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIJuMj3EXia4A5CehUhyX3U6VZEib5dXRyKMlbkibN0eeJta8icxY4jK4ytg/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285230&idx=2&sn=7d23ac38d050d7be6877679a332864bf#rd',
+            ),
+            array(
+                'title' => '上海/杭州出发提前40天购票优惠CNY200！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIDeFRVGhQn85SKHBS29g89hUaTj8iaJkwBuiaA3LcaN7M51VIj4vObEbA/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285230&idx=3&sn=f2e699e7c0efb007abf54e52b35a6707#rd',
+            ),
+            array(
+                'title' => '青岛-台湾（台北/高雄）-青岛往返提前40天出票促销',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIocSarvKlljYTSAflaWrmIXfMtzsXjI3uoyAjPM4cyjSrlT2WjZpqicQ/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200285230&idx=4&sn=8534e2a952c621372a0e8423d28d7a4d#rd',
+            ),
+
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
     }
 
 
