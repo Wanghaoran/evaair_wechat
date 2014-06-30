@@ -33,6 +33,7 @@ class WechatmsgWidget extends Action {
                     'EventKey' => array(
                         'FLIGHT_TIME' => 'execClick_FLIGHT_TIME',//班机时刻表
                         'FLIGHT_TIME_NOW' => 'execClick_FLIGHT_TIME_NOW',//班机实际到离
+                        'MY_EVAAIR' => 'execClick_MY_EVAAIR',//我的长荣航班
                     ),
                 ),
                 'LOCATION' => array(
@@ -130,6 +131,46 @@ class WechatmsgWidget extends Action {
                 'description' => '今天要搭机吗？还是您要到机场接机呢？ 您可以透过班机实际到离服务，查询长荣(BR)与立荣航空(B7)最新的班机动态。',
                 'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIUIbHXdfy9uWKyibVoxhg3yaoWqe4Bw76ib4XUZpo930e0bxkbG9ibQLFQ/0',
                 'url' => 'http://m.evaair.com/A3/FlightstatusSearch.aspx?Lang=zh-cn',
+            ),
+        );
+
+        $this -> responseNews($toUsername, $fromUsername, $Articles);
+    }
+
+    //我的长荣航班
+    public function execClick_MY_EVAAIR($postObj){
+        $fromUsername = $postObj -> FromUserName;
+        $toUsername = $postObj -> ToUserName;
+        $Articles = array(
+            array(
+                'title' => '我的长荣航班',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIicpO8XzyhlHq895F7ATwXjv64YwffMEQThhGZwS9BVFQeqUjFT0v5iaQ/0',
+                'url' => 'http://mp.weixin.qq.com/s?__biz=MjM5MzQzODM0Mw==&mid=200284794&idx=1&sn=f47ce68c289c59d42af5c7b5d73d8fe5#rd',
+            ),
+            array(
+                'title' => '【行程管理】登入订位代码，进行选位以及报到等功能',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIJiaYpRibw4iap1iaXXtsvU5URer1AtBbwyXe0IDpbc1Bu4Hg0BrChjxw0Q/0',
+                'url' => 'http://m.evaair.com/A5/MyTripStatus.aspx?Lang=zh-cn',
+            ),
+            array(
+                'title' => '【网络报到】先行上网报到，节省柜台报到时间',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxIpBs94r5HlSiadVe5MfSbyYk4bBjIVsiblibxtTeF2Fv3GkuHiaMUaGuicicw/0',
+                'url' => 'http://m.evaair.com/A4/CheckinStatus.aspx?Lang=zh-cn',
+            ),
+            array(
+                'title' => '【网络选餐】预定你愛的机上美食吧！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxI64BsXzCyIAT0kbutWMIibtNJ8oySeicmDaibD5ficQQoicWGalHEPlrdZww/0',
+                'url' => 'http://m.evaair.com/A12/FlightMealSearch.aspx?Lang=zh-cn',
+            ),
+            array(
+                'title' => '【班机短信服务】用手机收简讯（短信）掌握班机状况！',
+                'description' => '',
+                'picurl' => 'http://mmbiz.qpic.cn/mmbiz/oVBNsPvJww2qNJ6mztHTt2ibaEibm1icNxI8Sutcz2UyCkuqlkHlba66Q9h1DAz8OjZMsqV9nWmRc0licaUBw0ufTw/0',
+                'url' => 'http://m.evaair.com/A10/FlightNotificationInfo.aspx?Lang=zh-cn',
             ),
         );
 
