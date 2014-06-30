@@ -19,6 +19,8 @@ class IndexAction extends Action {
 
     public function index(){
 
+        dump($GLOBALS);
+
         //get post data, May be due to the different environments
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
 
