@@ -1,7 +1,7 @@
 <?php
 class IndexAction extends Action {
 
-
+/*
     public function _before_index(){
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
@@ -17,6 +17,7 @@ class IndexAction extends Action {
     }
 
 
+*/
     public function index(){
         echo $_GET['echostr'];
         /*
