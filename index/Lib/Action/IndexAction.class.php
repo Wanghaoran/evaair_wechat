@@ -1,7 +1,5 @@
 <?php
 class IndexAction extends Action {
-
-    /*
     public function _before_index(){
         $signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
@@ -15,12 +13,9 @@ class IndexAction extends Action {
             return false;
         }
     }
-    */
 
 
     public function index(){
-        echo $_GET['echostr'];
-        /*
         $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         if(!empty($postStr)){
             R('Wechatmsg/checkMsg', array($postStr), 'Widget');
@@ -28,7 +23,6 @@ class IndexAction extends Action {
             echo '';
             exit;
         }
-        */
 
     }
 
